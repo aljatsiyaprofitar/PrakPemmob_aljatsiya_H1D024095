@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -34,7 +35,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JualanTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    LayoutTentangJualan()
+                    LayoutTentangJualan(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -50,9 +51,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun LayoutTentangJualan() {
+fun LayoutTentangJualan(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(all = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -63,42 +64,44 @@ fun LayoutTentangJualan() {
                 .clip(CircleShape)
                 .background(Color.Gray),
             contentAlignment = Alignment.Center
-        ){
+        ) {
             Text("Jualan", color = Color.White, fontWeight = FontWeight.Bold)
         }
-    }
-    Spacer(modifier = Modifier.height(24.dp))
 
-    Text(
-        text = "Tentang Jualan",
-        fontSize = 24.sp,
-        fontWeight = FontWeight.Bold
-    )
+        Spacer(modifier = Modifier.height(24.dp))
 
-    Spacer(modifier = Modifier.height(16.dp))
-
-    Text(
-        text = "Aplikasi Jualan adalah platform yang mewadahi.......",
-        fontSize = 16.sp,
-        modifier = Modifier.padding(horizontal = 16.dp)
-    )
-    Spacer(modifier = Modifier.height(32.dp))
-
-    Row(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color(0xFFE0E0E0))
-            .padding(all = 16.dp)
-    ) {
         Text(
-            text = "Misi Kami:",
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.weight(1f)
+            text = "Tentang Jualan",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
         )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         Text(
-            text = "Memajukan UMKM Lokal",
-            modifier = Modifier.weight(2f)
+            text = "Aplikasi Jualan adalah platform yang mewadahi.......",
+            fontSize = 16.sp,
+            modifier = Modifier.padding(horizontal = 16.dp)
         )
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color(0xFFE0E0E0))
+                .padding(all = 16.dp)
+        ) {
+            Text(
+                text = "Misi Kami:",
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.weight(1f)
+            )
+            Text(
+                text = "Memajukan UMKM Lokal",
+                modifier = Modifier.weight(2f)
+            )
+        }
     }
 }
 
