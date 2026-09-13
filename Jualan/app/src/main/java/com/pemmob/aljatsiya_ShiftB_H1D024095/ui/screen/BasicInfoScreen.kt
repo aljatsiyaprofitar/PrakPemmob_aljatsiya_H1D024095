@@ -13,15 +13,19 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pemmob.aljatsiya_ShiftB_H1D024095.R
@@ -30,7 +34,23 @@ import com.pemmob.aljatsiya_ShiftB_H1D024095.R
 @Composable
 fun BasicInfoScreen(onNavigateToContact: () -> Unit) {
     Scaffold(
-        
+        topBar = {
+            TopAppBar(
+                title = { Text("Tentang Jualan") },
+                navigationIcon = {
+                    Icon(
+                        painter = painterResource(id = R.drawable.info_icon),
+                        contentDescription = "Info Icon",
+                        modifier = Modifier.padding(start = 12.dp)
+                    )
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimary,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
+                )
+            )
+        }
     ) { innerPadding ->
         Column(
             modifier = Modifier
@@ -39,6 +59,8 @@ fun BasicInfoScreen(onNavigateToContact: () -> Unit) {
                 .padding(all = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(modifier = Modifier.height(16.dp))
+            
             Image(
                 painter = painterResource(id = R.mipmap.ic_launcher_foreground),
                 contentDescription = "Logo Aplikasi",
@@ -55,13 +77,23 @@ fun BasicInfoScreen(onNavigateToContact: () -> Unit) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(
-                text = "Aplikasi Jualan adalah platform yang mewadahi.......",
-                fontSize = 16.sp,
-                modifier = Modifier.padding(horizontal = 16.dp)
-            )
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.secondary,
+                    contentColor = MaterialTheme.colorScheme.onSecondary
+                ),
+                shape = MaterialTheme.shapes.medium
+            ) {
+                Text(
+                    text = "Aplikasi Jualan adalah platform yang mewadahi produk lokal UMKM di wilayah Kabupaten Purbalingga, Jawa Tengah.",
+                    fontSize = 16.sp,
+                    modifier = Modifier.padding(16.dp),
+                    textAlign = TextAlign.Start
+                )
+            }
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(24.dp))
 
             Card(
                 modifier = Modifier.fillMaxWidth(),
@@ -83,23 +115,24 @@ fun BasicInfoScreen(onNavigateToContact: () -> Unit) {
                     )
                     Text(
                         text = "Memajukan UMKM Lokal",
+                        color = Color.White,
                         modifier = Modifier.weight(2f)
                     )
-                    
-                    Spacer(modifier = Modifier.weight(1f))
-
-                    Button(
-                        onClick = onNavigateToContact,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp)
-                    ) {
-                        Text("Hubungi Kami", style = MaterialTheme.typography.labelLarge)
-                    }
-                    
-                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
+
+            Spacer(modifier = Modifier.weight(1f))
+
+            Button(
+                onClick = onNavigateToContact,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+            ) {
+                Text("Hubungi Kami", style = MaterialTheme.typography.labelLarge)
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }
