@@ -26,6 +26,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.pemmob.aljatsiya_ShiftB_H1D024095.ui.screen.BasicInfoScreen
+import com.pemmob.aljatsiya_ShiftB_H1D024095.ui.screen.HubungiKamiScreen
 import com.pemmob.aljatsiya_ShiftB_H1D024095.ui.theme.JualanTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,8 +39,22 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JualanTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    LayoutTentangJualan(modifier = Modifier.padding(innerPadding))
+                val navController = rememberNavController()
+                
+                NavHost(
+                    navController = navController,
+                    startDestination = "basic_info"
+                ) {
+                    composable("basic_info") {
+                        BasicInfoScreen(
+                            onNavigateToContact = {
+                                navController.navigate("hubungi_kami")
+                            }
+                        )
+                    }
+                    composable("hubungi_kami") {
+                        HubungiKamiScreen(navController = navController)
+                    }
                 }
             }
         }
@@ -53,7 +72,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun LayoutTentangJualan(modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
             .padding(all = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
