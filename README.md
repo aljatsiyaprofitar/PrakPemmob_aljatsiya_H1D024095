@@ -13,4 +13,6 @@ Shift Awal & Baru   : B
 
 ## Display Tugas Pertemuan 3
 <img width="403" height="436" alt="10266e9f-cf46-4249-ab6f-b9514a1240d5" src="https://github.com/user-attachments/assets/321c8e6e-f0c5-4ae5-a9da-bdc36d18cd9e" />
-Screen_recording_20260920_113822
+https://github.com/user-attachments/assets/85ff4d6a-3739-4766-800c-307c4233c81e
+
+
