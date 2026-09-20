@@ -10,3 +10,7 @@ Shift Awal & Baru   : B
 ## Display Tugas Pertemuan 2
 <img width="1080" height="2400" alt="Screenshot_20260913_233823" src="https://github.com/user-attachments/assets/4ade2afb-06e9-4755-9d75-2b36285ddfa0" />
 <img width="1080" height="2400" alt="Screenshot_20260913_233107" src="https://github.com/user-attachments/assets/7d2be275-200f-48b7-9e3e-8280245a7e5a" />
+
+## Display Tugas Pertemuan 3
+<img width="403" height="436" alt="10266e9f-cf46-4249-ab6f-b9514a1240d5" src="https://github.com/user-attachments/assets/321c8e6e-f0c5-4ae5-a9da-bdc36d18cd9e" />
+Screen_recording_20260920_113822
