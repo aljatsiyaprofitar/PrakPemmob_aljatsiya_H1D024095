@@ -1,4 +1,4 @@
-package com.pemmob.aljatsiya_ShiftB_H1D024095.ui.theme
+package com.pemmob.aljatsiya.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

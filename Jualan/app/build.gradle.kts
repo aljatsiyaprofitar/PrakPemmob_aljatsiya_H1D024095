@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.pemmob.aljatsiya_ShiftB_H1D024095"
+    namespace = "com.pemmob.aljatsiya"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.pemmob.aljatsiya_ShiftB_H1D024095"
+        applicationId = "com.pemmob.aljatsiya"
         minSdk = 29
         targetSdk = 37
         versionCode = 1

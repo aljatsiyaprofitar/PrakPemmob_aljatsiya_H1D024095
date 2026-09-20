@@ -1,4 +1,4 @@
-package com.pemmob.aljatsiya_ShiftB_H1D024095
+package com.pemmob.aljatsiya
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.pemmob.aljatsiya_ShiftB_H1D024095
+package com.pemmob.aljatsiya
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,9 +28,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.pemmob.aljatsiya_ShiftB_H1D024095.ui.screen.BasicInfoScreen
-import com.pemmob.aljatsiya_ShiftB_H1D024095.ui.screen.HubungiKamiScreen
-import com.pemmob.aljatsiya_ShiftB_H1D024095.ui.theme.JualanTheme
+import com.pemmob.aljatsiya.ui.screen.BasicInfoScreen
+import com.pemmob.aljatsiya.ui.screen.HubungiKamiScreen
+import com.pemmob.aljatsiya.ui.theme.JualanTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
